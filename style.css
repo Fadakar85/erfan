@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.seci{
+    width: 40%;
+    height: 90vh;
+    border: 2px solid black;
+    margin: auto;
+    margin-top: 1rem;
+}
+.text-write{
+    width: 100%;
+    height: 20vh;
+    font-size: 3rem;
+}
+.addbtn{
+    width: 25%;
+    height: 16vh;
+    border: 1px solid black;
+}
+.addbtn2{
+    width: 25%;
+    height: 16vh;
+    border: 1px solid black;
+    background-color: #747474;
+}
+.addbtn-div{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.mosavi{
+    height: 40.3vh;
+    width: 25%;
+    right: 0;
+    top: 24.7%;
+    border: 1px solid black;
+    border-radius: 0;
+    transition: all .5s ease;
+    z-index: 200;
+}
+.addbtn1{
+    width: 50%;
+    height: 13.4vh;
+    border: 1px solid black;
+    background-color: #b3b2b2;
+    z-index: 100;
+}
+.addbtn3{
+    width: 25%;
+    height: 13.4vh;
+    border: 1px solid black;
+    background-color: #b3b2b2;
+    scale: 0;
+}
+.additional{
+    height: 13.4vh;
+    top: 0;
+    right: 0;
+    width: 25%;
+    border: 1px solid black;
+    background-color: #00bb00;
+    scale: 1;
+}
+.additional1{
+    height: 13.4vh;
+    top: 0;
+    right: 0;
+    width: 25%;
+    border: 1px solid black;
+    background-color: #0099ff;
+}
+.additionalist{
+    width: 75%;
+    height: 32vh;
+    background-color: #ffffff;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    transition: all .25s ease;
+}
+.adder{
+    
+    transition: all .25s ease;
+}
+#deleted, #delete{
+    z-index: 200;
+}
+#delete{
+    background-color: #ee0000;
+}
+#deleted{
+    background-color: #fbff00;
+}

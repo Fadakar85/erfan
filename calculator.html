@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>calculator</title>
+</head>
+<body>
+    <section class="seci">
+        <input type="text" class="text-write" id="textInput">
+        <div class="addbtn-div">
+            <button class="addbtn2" id="plus">
+                +
+            </button>
+            <button class="addbtn2" id="minus">
+                -
+            </button>
+            <button class="addbtn2" id="multi">
+                X
+            </button>
+            <button class="addbtn2" id="divi">
+                /
+            </button>
+        </div>
+        <div class="position-relative">
+
+
+            <div class="d-flex w-75">
+                <button class="addbtn addbtn1" id="one">1</button>
+                <button class="addbtn addbtn1" id="two">2</button>
+                <button class="addbtn addbtn1" id="three">3</button>
+            </div>
+
+            <div class="d-flex w-75">
+
+                <button class="addbtn addbtn1" id="four">4</button>
+                <button class="addbtn addbtn1" id="five">5</button>
+                <button class="addbtn addbtn1" id="six">6</button>
+            </div>
+
+            <div class="d-flex w-75">
+                <button class="addbtn addbtn1" id="seven">7</button>
+                <button class="addbtn addbtn1" id="eight">8</button>
+                <button class="addbtn addbtn1" id="nine">9</button>
+            </div>
+
+            <div class="d-flex w-75">
+                <button class="addbtn addbtn1" id="zyro">0</button>
+                <button class="addbtn1" id="delete" onclick="deleteing()">del</button>
+                <button class="addbtn1" id="deleted" onclick="deleteingAll()">C</button>
+            </div>
+
+            <div class="additionalist position-absolute" id="add">
+                <div class="d-flex">
+                    <button class="addbtn addbtn2 adder">radical</button>
+                    <button class="addbtn addbtn2 adder">power</button>
+                    <button class="addbtn addbtn2 adder">| X |</button>
+                    
+                </div>
+                <div class="d-flex">
+                    <button class="addbtn addbtn2 adder">sin</button>
+                    <button class="addbtn addbtn2 adder">cos</button>
+                    <button class="addbtn addbtn2 adder">random</button>
+                </div>
+            </div>
+            <button class="additional1 position-absolute addbtn3" id="close" onclick="closer()"><i class="bi bi-x-lg"></i></button>
+            <button class="additional position-absolute" id="open" onclick="add()">additional</button>
+            <button class="mosavi position-absolute text-light bg-dark" id="tasavi">=</button>
+            
+        </div>
+    </section>
+
+    <script>
+        const textInput = document.getElementById("textInput");
+        const plus = document.getElementById("plus");
+        const minus = document.getElementById("minus");
+        const multi = document.getElementById("multi");
+        const divi = document.getElementById("divi");
+        const dote = document.getElementById("delete");
+        const deleteAll = document.getElementById("deleted");
+        const tesavi = document.getElementById("tasavi");
+        const btns = document.getElementsByClassName("addbtn");
+        const adder = document.getElementsByClassName("adder");
+        const addbtn2 = document.getElementsByClassName("addbtn2");
+        const cls = document.getElementById("close");
+        const opn = document.getElementById("open");
+        const adding = document.getElementById("add");
+        let firstNmb, secondNmb; let calcu;
+        for (let i = 0; i < btns.length; i++) {btns[i].addEventListener("click", ()=>{textInput.value = textInput.value + btns[i].innerHTML;});}
+        function deleteing() {textInput.value = textInput.value.slice(0, -1);}
+        for (let i = 0; i < addbtn2.length; i++) {addbtn2[i].addEventListener("click", ()=>{firstNmb = parseFloat(textInput.value); calcu = addbtn2[i].innerHTML; textInput.value = "";});}
+        tesavi.addEventListener("click", ()=>{secondNmb = parseFloat(textInput.value); textInput.value = "";
+            if (calcu == addbtn2[0].innerHTML) {textInput.value = firstNmb + secondNmb;}
+            else if (calcu == addbtn2[1].innerHTML) {textInput.value = firstNmb - secondNmb;}
+            else if (calcu == addbtn2[2].innerHTML) {textInput.value = firstNmb * secondNmb;}
+            else if (calcu == addbtn2[3].innerHTML) {textInput.value = firstNmb / secondNmb;}
+            else if (calcu == addbtn2[5].innerHTML) {textInput.value = Math.pow(firstNmb, secondNmb);}});
+        addbtn2[4].addEventListener("click", ()=>{textInput.value = Math.sqrt(firstNmb);})
+        addbtn2[6].addEventListener("click", ()=>{textInput.value = Math.abs(firstNmb);})
+        addbtn2[7].addEventListener("click", ()=>{textInput.value = Math.sin(firstNmb * Math.PI / 180);})
+        addbtn2[8].addEventListener("click", ()=>{textInput.value = Math.cos(firstNmb * Math.PI / 180);})
+        addbtn2[9].addEventListener("click", ()=>{textInput.value = Math.random()*10;})
+        function deleteingAll() {textInput.value = ""; firstNmb; secondNmb;}
+
+
+        function add(){adding.style.left = "100%";for (let i = 0; i < adder.length; i++) {adder[i].style.opacity = "1";}opn.style.scale = "0";cls.style.scale = "1";}
+        function closer(){adding.style.left = "0%";for (let i = 0; i < adder.length; i++) {adder[i].style.opacity = "0";}opn.style.scale = "1";cls.style.scale = "0";}
+
+
+       
+
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.esm.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
