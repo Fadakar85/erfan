@@ -10,6 +10,11 @@
     margin: auto;
     margin-top: 1rem;
 }
+@media only screen (max-width: 1000px){
+    .seci{
+        height: 70vh;
+    }
+}
 .text-write{
     width: 100%;
     height: 20vh;
