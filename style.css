@@ -10,7 +10,7 @@
     margin: auto;
     margin-top: 1rem;
 }
-@media only screen (max-width: 1000px){
+@media only screen (max-width: 2000px){
     .seci{
         height: 70vh;
     }
